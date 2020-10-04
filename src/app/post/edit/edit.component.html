@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-subtitle>Edit Post</mat-card-subtitle>
+  <form class="example-form" [formGroup]="editPostForm" (ngSubmit)="onEditPost()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Post Title" formControlName="title"/>
+    </mat-form-field>
+
+  <img [src]="previewUrl" alt="preview" width="100%" *ngIf="previewUrl"/>
+  <!-- File Input -->
+  <div class="form-group">
+    <input type="file" (change)="uploadFile($event)">
+  </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Content</mat-label>
+      <textarea matInput placeholder="Post Content" formControlName="content"></textarea>
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-flat-button color="primary">Edit</button>
+    </div>
+  </form>
+
+</mat-card>

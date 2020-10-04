@@ -1,0 +1,18 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/post" (click)="closeSideBar()">
+    <mat-icon color="primary">home</mat-icon>
+    Home
+  </a>
+    <a mat-list-item routerLink="/auth" (click)="closeSideBar()">
+      <mat-icon color="primary">account_circle</mat-icon>
+      My Account
+    </a>
+    <a mat-list-item routerLink="/post/create" (click)="closeSideBar()">
+      <mat-icon color="primary">create</mat-icon>
+      Create Post
+    </a>
+    <a mat-list-item routerLink="/post/own" (click)="closeSideBar()">
+      <mat-icon color="primary">visibility</mat-icon>
+      My Posts
+    </a>
+</mat-nav-list>

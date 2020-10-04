@@ -1,0 +1,32 @@
+<mat-card *ngFor="let post of allposts">
+  <div class="auther-sec">
+    <img class="auther-avater" src="https://th.bing.com/th/id/OIP.ikBTrFhQWWad8pSdFlRx9gHaHa?pid=Api&rs=1">
+    <div class="auther-desc">
+      {{post.user.name}}
+      <mat-card-subtitle class="publish-date">{{post.createdAt|date}}</mat-card-subtitle>
+    </div>
+  </div>
+  <div class="post-section">
+    <mat-card-title>{{post.title}}</mat-card-title>
+    <mat-card-content>
+      {{post.content|contentWrap:contentLen}}
+      <a class="read-more" *ngIf="post.content.length > contentLen" (click)="gotoDetails(post.id)">Read More</a>
+    </mat-card-content>
+    <div class="post-image-sec" *ngIf="post.imageUrl">
+      <img class="post-image" src="http://localhost:1234/{{post.imageUrl}}">
+    </div>
+  </div>
+  <mat-card-footer>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon>thumb_up_alt</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>comment</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>share</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-footer>
+</mat-card>

@@ -1,0 +1,43 @@
+<mat-card *ngFor="let post of myAllposts">
+  <div class="auther-sec">
+    <img class="auther-avater" src="https://th.bing.com/th/id/OIP.ikBTrFhQWWad8pSdFlRx9gHaHa?pid=Api&rs=1">
+    <div class="auther-desc">
+      {{post.user.name}}
+      <mat-card-subtitle class="publish-date">{{post.createdAt|date}}</mat-card-subtitle>
+    </div>
+    <div class="post-action">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="gotoEdit(post.id)">
+          <mat-icon>content_paste</mat-icon>
+          <span>Edit Post</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="post-section">
+    <mat-card-title>{{post.title}}</mat-card-title>
+    <mat-card-content>
+      {{post.content|contentWrap:contentLen}}
+      <a class="read-more" *ngIf="post.content.length > contentLen" (click)="gotoDetails(post.id)">Read More</a>
+    </mat-card-content>
+    <div class="post-image-sec" *ngIf="post.imageUrl">
+      <img class="post-image" src="http://localhost:1234/{{post.imageUrl}}">
+    </div>
+  </div>
+  <mat-card-footer>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon>thumb_up_alt</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>comment</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>share</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-footer>
+</mat-card>

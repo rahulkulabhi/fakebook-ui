@@ -1,0 +1,55 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.content-wrapper {
+  margin: 0;
+  padding: 10px 15px;
+  background-color: #e2e0e0;
+  min-height: 100%;
+}
+
+mat-sidenav.mat-drawer-opened {
+  min-width: 40%;
+}
+
+
+mat-spinner {
+  position: absolute;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 300px) and (max-width: 759px) {
+
+  mat-spinner {
+    top: 20%;
+    left: 38%;
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+
+  mat-spinner {
+    top: 20%;
+    left: 44%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  mat-spinner {
+    top: 20%;
+    left: 46%;
+  }
+}

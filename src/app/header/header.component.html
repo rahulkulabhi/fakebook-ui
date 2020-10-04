@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="menuToggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{appTitle}}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Register" title="Register" (click)="goto('auth/register')" *ngIf="showAuthMenu !== true">
+        <mat-icon>how_to_reg</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Login" title="Login" (click)="goto('auth/login')" *ngIf="showAuthMenu !== true">
+        <mat-icon>login</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Logout" title="Logout" (click)="logout()" *ngIf="showAuthMenu === true">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>
